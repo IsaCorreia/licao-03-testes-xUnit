@@ -10,4 +10,13 @@ public class UnitTest1
     result.Should().Be(expected);
   }
 
+  [Theory(DisplayName = "Deve retornar a soma de dois números.")]
+  [InlineData(3, 3, 6)]
+  [InlineData(-10, 3, -7)]
+  [InlineData(77, 33, 110)]
+  public void TestSum(int input1, int input2, int expected)
+  {
+    var result = Class1.Sum(input1, input2);
+    result.Should().Be(expected);
+  }
 }
